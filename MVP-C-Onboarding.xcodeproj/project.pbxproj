@@ -76,6 +76,42 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4F2EB09926567D37006C604D /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		4F2EB09A26567D40006C604D /* Common */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		4F2EB09B26567D4B006C604D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		4F2EB09C26567F97006C604D /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				4F55F30C26567B4E00BB6314 /* LaunchScreen.storyboard */,
+			);
+			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		4F2EB09D26568042006C604D /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
 		4F55F2F526567B4C00BB6314 = {
 			isa = PBXGroup;
 			children = (
@@ -99,12 +135,16 @@
 		4F55F30026567B4C00BB6314 /* MVP-C-Onboarding */ = {
 			isa = PBXGroup;
 			children = (
+				4F2EB09926567D37006C604D /* Constants */,
+				4F2EB09A26567D40006C604D /* Common */,
+				4F2EB09B26567D4B006C604D /* Model */,
+				4F2EB09D26568042006C604D /* ViewControllers */,
 				4F55F30126567B4C00BB6314 /* AppDelegate.swift */,
 				4F55F30326567B4C00BB6314 /* SceneDelegate.swift */,
 				4F55F30526567B4C00BB6314 /* ViewController.swift */,
 				4F55F30726567B4C00BB6314 /* Main.storyboard */,
 				4F55F30A26567B4E00BB6314 /* Assets.xcassets */,
-				4F55F30C26567B4E00BB6314 /* LaunchScreen.storyboard */,
+				4F2EB09C26567F97006C604D /* SupportingFiles */,
 				4F55F30F26567B4E00BB6314 /* Info.plist */,
 			);
 			path = "MVP-C-Onboarding";

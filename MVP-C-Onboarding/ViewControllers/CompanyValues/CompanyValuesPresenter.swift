@@ -1,5 +1,5 @@
 //
-//  UserPresenter.swift
+//  CompanyValuesPresenter.swift
 //  MVP-Onboarding
 //
 //  Created by David on 18/05/2021.
@@ -15,15 +15,15 @@ import UIKit
 //
 //typealias PresenterDelegate = UsersPresenterDelegate & UIViewController
 
-protocol UsersPresenterProtocol {
+protocol CompanyValuesPresenterProtocol {
     func didTapUserDetailsButton()
 }
 
-final class UsersPresenter: UsersPresenterProtocol {
-    private weak var coordinator: UsersCoordinatorProtocol?
-    weak var view: UsersViewController?
+final class CompanyValuesPresenter: CompanyValuesPresenterProtocol {
+    private weak var coordinator: CompanyValuesCoordinatorProtocol?
+    weak var view: CompanyValuesViewController?
     
-    init(coordinator: UsersCoordinatorProtocol) {
+    init(coordinator: CompanyValuesCoordinatorProtocol) {
         self.coordinator = coordinator
     }
     

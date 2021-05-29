@@ -9,14 +9,17 @@ import UIKit
 
 final class HomeViewController: UIViewController {
     
-    private let usersButton = RoundUIButton(title: "Users")
-    private let detailsButton = RoundUIButton(title: "Details")
+    private let compValuesButton = RoundUIButton(title: "Company Values")
+    private let ourPeopleButton = RoundUIButton(title: "Our People")
+    
+    private let ourAppsButton = RoundUIButton(title: "Our Apps")
+    
     private let topLeftTile = ClippedCornerRectView(round: [Corners.topLeft], color: ThemeColors.coolBlue)
     
     private var presenter: HomePresenterProtocol
     
     enum Dimensions {
-        static let buttonWidth: CGFloat = 150
+        static let buttonWidth: CGFloat = 175
         static let buttonHeight: CGFloat = 50
     }
 
@@ -33,13 +36,13 @@ final class HomeViewController: UIViewController {
         super.viewDidLoad()
         title = "Air Onboarding"
         view.backgroundColor = ThemeColors.homeBackgroundColor
-        setupButtons()
         setupTiles()
+        setupButtons()
     }
     
     private func setupButtons() {
-        setupUsersButton()
-        setupDetailsButton()
+        setupCompanyValuesButton()
+        setupOurPeopleButton()
     }
     
     private func setupTiles() {
@@ -51,30 +54,32 @@ final class HomeViewController: UIViewController {
         topLeftTile.widthAnchor.constraint(equalToConstant: view.frame.width / 2 - 40).isActive = true
     }
     
-    private func setupUsersButton() {
-        view.addSubview(usersButton)
-        usersButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        usersButton.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
-        usersButton.widthAnchor.constraint(equalToConstant: Dimensions.buttonWidth).isActive = true
-        usersButton.heightAnchor.constraint(equalToConstant: Dimensions.buttonHeight).isActive = true
-        usersButton.addTarget(self, action: #selector(tappedUsers), for: .touchUpInside)
+    private func setupCompanyValuesButton() {
+        topLeftTile.addSubview(compValuesButton)
+        compValuesButton.centerXAnchor.constraint(equalTo: topLeftTile.centerXAnchor).isActive = true
+        compValuesButton.centerYAnchor.constraint(equalTo: topLeftTile.centerYAnchor).isActive = true
+        compValuesButton.widthAnchor.constraint(equalToConstant: Dimensions.buttonWidth).isActive = true
+        compValuesButton.heightAnchor.constraint(equalToConstant: Dimensions.buttonHeight).isActive = true
+        compValuesButton.addTarget(self, action: #selector(tappedCompanyValues), for: .touchUpInside)
     }
     
-    func setupDetailsButton() {
-        view.addSubview(detailsButton)
-        detailsButton.topAnchor.constraint(equalTo: usersButton.bottomAnchor, constant: 15).isActive = true
-        detailsButton.centerYAnchor.constraint(equalTo: usersButton.centerYAnchor).isActive = true
-        detailsButton.widthAnchor.constraint(equalTo: usersButton.widthAnchor).isActive = true
-        detailsButton.heightAnchor.constraint(equalTo: usersButton.heightAnchor).isActive = true
-        detailsButton.addTarget(self, action: #selector(tappedDetails), for: .touchUpInside)
+    private func setupOurPeopleButton() {
+        view.addSubview(ourPeopleButton)
+        ourPeopleButton.topAnchor.constraint(equalTo: topLeftTile.bottomAnchor, constant: 15).isActive = true
+        ourPeopleButton.centerXAnchor.constraint(equalTo: compValuesButton.centerXAnchor).isActive = true
+        ourPeopleButton.widthAnchor.constraint(equalTo: compValuesButton.widthAnchor).isActive = true
+        ourPeopleButton.heightAnchor.constraint(equalTo: compValuesButton.heightAnchor).isActive = true
+        ourPeopleButton.addTarget(self, action: #selector(tappedDetails), for: .touchUpInside)
     }
 
-    @objc private func tappedUsers() {
-        presenter.didTapUsersButton()
+    @objc private func tappedCompanyValues() {
+        presenter.didTapCompanyValuesButton()
     }
     
     @objc private func tappedDetails() {
-        presenter.didTapDetailsButton()
+        presenter.didTapOurPeopleButton()
     }
+    
+    
 
 }

@@ -8,8 +8,9 @@
 import Foundation
 
 protocol HomePresenterProtocol {
-    func didTapUsersButton()
-    func didTapDetailsButton()
+    func didTapCompanyValuesButton()
+    func didTapOurPeopleButton()
+    func didTapOurAppsButton()
 }
 
 final class HomePresenter: HomePresenterProtocol {
@@ -20,11 +21,15 @@ final class HomePresenter: HomePresenterProtocol {
         self.coordinator = coordinator
     }
     
-    func didTapUsersButton() {
-        coordinator?.navigateToUsers()
+    func didTapCompanyValuesButton() {
+        coordinator?.navigateToCompanyValues()
     }
     
-    func didTapDetailsButton() {
-        coordinator?.navigateToDetails()
+    func didTapOurPeopleButton() {
+        coordinator?.navigateToOurPeople()
+    }
+    
+    func didTapOurAppsButton() {
+        // TODO: - Coordinator add navigate to our apps
     }
 }

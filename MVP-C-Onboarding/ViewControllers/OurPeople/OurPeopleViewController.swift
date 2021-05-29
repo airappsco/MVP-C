@@ -1,5 +1,5 @@
 //
-//  DetailsViewController.swift
+//  OurPeopleViewController.swift
 //  MVP-Onboarding
 //
 //  Created by David on 19/05/2021.
@@ -7,11 +7,10 @@
 
 import UIKit
 
-final class DetailsViewController: UIViewController {
-    private var presenter: DetailsPresenterProtocol
+final class OurPeopleViewController: UIViewController {
+    private var presenter: OurPeoplePresenterProtocol
     
-    
-    init(presenter: DetailsPresenterProtocol) {
+    init(presenter: OurPeoplePresenterProtocol) {
         self.presenter = presenter
         super.init(nibName: nil, bundle: nil)
     }
@@ -23,10 +22,7 @@ final class DetailsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        title = "Detail View"
+        title = "🦸 Our Heroes 🦸‍♀️"
         view.backgroundColor = .systemRed
-        
     }
-    
-
 }

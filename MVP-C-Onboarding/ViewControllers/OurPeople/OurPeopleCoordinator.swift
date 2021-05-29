@@ -1,18 +1,17 @@
 //
-//  DetailsViewCoordinator.swift
+//  OurPeopleCoordinator.swift
 //  MVP-C-Onboarding
 //
 //  Created by David on 23/05/2021.
 //
 
-import Foundation
 import UIKit
 
-protocol DetailsCoordinatorProtocol: Coordinator {
+protocol OurPeopleCoordinatorProtocol: Coordinator {
     func finish()
 }
 
-final class DetailsCoordinator: DetailsCoordinatorProtocol {
+final class OurPeopleCoordinator: OurPeopleCoordinatorProtocol {
     private weak var parent: Coordinator?
     var childCoordinators = [Coordinator]()
     
@@ -24,11 +23,11 @@ final class DetailsCoordinator: DetailsCoordinatorProtocol {
     }
     
     func start() {
-        let presenter = DetailsPresenter(coordinator: self)
-        let viewController = DetailsViewController(presenter: presenter)
+        let presenter = OurPeoplePresenter(coordinator: self)
+        let viewController = OurPeopleViewController(presenter: presenter)
         presenter.view = viewController
-        let detailsNavigationController = UINavigationController(rootViewController: viewController)
-        navigationController.present(detailsNavigationController, animated: true)
+        let ourPeopleNavigationController = UINavigationController(rootViewController: viewController)
+        navigationController.present(ourPeopleNavigationController, animated: true)
     }
     
     func finish() {

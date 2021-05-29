@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class UsersViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+final class CompanyValuesViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     private let tableView: UITableView = {
         let table = UITableView()
@@ -15,12 +15,12 @@ final class UsersViewController: UIViewController, UITableViewDelegate, UITableV
         return table
     }()
     
-    private var presenter: UsersPresenterProtocol
+    private var presenter: CompanyValuesPresenterProtocol
     
     private var users = [User]()
         
     
-    init(presenter: UsersPresenterProtocol) {
+    init(presenter: CompanyValuesPresenterProtocol) {
         self.presenter = presenter
         super.init(nibName: nil, bundle: nil)
     }
@@ -32,7 +32,7 @@ final class UsersViewController: UIViewController, UITableViewDelegate, UITableV
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-//        title = "Users"
+        title = "Air Apps Goals ⚽️ and Values 💎"
         view.backgroundColor = .systemGray
         
 //        setupCoordinator()

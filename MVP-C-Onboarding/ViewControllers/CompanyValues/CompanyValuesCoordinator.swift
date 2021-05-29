@@ -1,5 +1,5 @@
 //
-//  UsersCoordinator.swift
+//  CompanyValuesCoordinator.swift
 //  MVP-Onboarding
 //
 //  Created by David on 18/05/2021.
@@ -7,11 +7,11 @@
 
 import UIKit
 
-protocol UsersCoordinatorProtocol: Coordinator {
+protocol CompanyValuesCoordinatorProtocol: Coordinator {
     func finish()
 }
 
-class UsersCoordinator: UsersCoordinatorProtocol {
+class CompanyValuesCoordinator: CompanyValuesCoordinatorProtocol {
     private weak var parent: Coordinator?
     var childCoordinators = [Coordinator]()
     
@@ -23,8 +23,8 @@ class UsersCoordinator: UsersCoordinatorProtocol {
     }
     
     func start() {
-        let presenter = UsersPresenter(coordinator: self)
-        let viewController = UsersViewController(presenter: presenter)
+        let presenter = CompanyValuesPresenter(coordinator: self)
+        let viewController = CompanyValuesViewController(presenter: presenter)
         presenter.view = viewController
         let usersNavigationController = UINavigationController(rootViewController: viewController)
         navigationController.present(usersNavigationController, animated: true)

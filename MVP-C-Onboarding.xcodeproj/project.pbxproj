@@ -154,6 +154,7 @@
 				4FEABFC2265AB915009A5D2E /* CompanyValues */,
 				4FEABFC3265AB92B009A5D2E /* OurPeople */,
 				4F82CCA2265C57970072F97F /* OurApps */,
+				4FF6AAF92663EF40006DB682 /* Architecture */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -279,6 +280,13 @@
 				4FF6AAF72663A7AA006DB682 /* ColorSupport.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		4FF6AAF92663EF40006DB682 /* Architecture */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Architecture;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

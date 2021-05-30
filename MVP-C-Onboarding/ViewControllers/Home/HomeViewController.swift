@@ -9,11 +9,12 @@ import UIKit
 
 final class HomeViewController: UIViewController {
     
-    private let compValuesButton = RoundUIButton(title: "Company Values")
+    // Navigation buttons
+    private let compValuesButton = RoundUIButton(title: "Company Values", color: ThemeColors.topLeftTileColor)
     private let ourPeopleButton = RoundUIButton(title: "Our People", color: ThemeColors.bottomLeftTileColor)
+    private let ourAppsButton = RoundUIButton(title: "Our Apps", color: ThemeColors.topRightTileColor)
     
-    private let ourAppsButton = RoundUIButton(title: "Our Apps")
-    
+    // Tiles
     private let topLeftTile = ClippedCornerRectView(
         round: [Corners.topLeft],
         color: ThemeColors.topLeftTileColor)
@@ -60,6 +61,7 @@ final class HomeViewController: UIViewController {
     private func setupButtons() {
         setupCompanyValuesButton()
         setupOurPeopleButton()
+        setupOurAppsButton()
     }
     
     private func setupTiles() {
@@ -103,22 +105,33 @@ final class HomeViewController: UIViewController {
     }
     
     private func setupOurPeopleButton() {
-        view.addSubview(ourPeopleButton)
-        ourPeopleButton.topAnchor.constraint(equalTo: topLeftTile.bottomAnchor, constant: 15).isActive = true
-        ourPeopleButton.centerXAnchor.constraint(equalTo: compValuesButton.centerXAnchor).isActive = true
-        ourPeopleButton.widthAnchor.constraint(equalTo: compValuesButton.widthAnchor).isActive = true
-        ourPeopleButton.heightAnchor.constraint(equalTo: compValuesButton.heightAnchor).isActive = true
-        ourPeopleButton.addTarget(self, action: #selector(tappedDetails), for: .touchUpInside)
+        bottomLeftTile.addSubview(ourPeopleButton)
+        ourPeopleButton.centerXAnchor.constraint(equalTo: bottomLeftTile.centerXAnchor).isActive = true
+        ourPeopleButton.centerYAnchor.constraint(equalTo: bottomLeftTile.centerYAnchor).isActive = true
+        ourPeopleButton.widthAnchor.constraint(equalToConstant: Dimensions.buttonWidth).isActive = true
+        ourPeopleButton.heightAnchor.constraint(equalToConstant: Dimensions.buttonHeight).isActive = true
+        ourPeopleButton.addTarget(self, action: #selector(tappedOurPeople), for: .touchUpInside)
+    }
+    
+    private func setupOurAppsButton() {
+        topRightTile.addSubview(ourAppsButton)
+        ourAppsButton.centerXAnchor.constraint(equalTo: topRightTile.centerXAnchor).isActive = true
+        ourAppsButton.centerYAnchor.constraint(equalTo: topRightTile.centerYAnchor).isActive = true
+        ourAppsButton.widthAnchor.constraint(equalToConstant: Dimensions.buttonWidth).isActive = true
+        ourAppsButton.heightAnchor.constraint(equalToConstant: Dimensions.buttonHeight).isActive = true
+        ourAppsButton.addTarget(self, action: #selector(tappedOurApps), for: .touchUpInside)
     }
 
     @objc private func tappedCompanyValues() {
         presenter.didTapCompanyValuesButton()
     }
     
-    @objc private func tappedDetails() {
+    @objc private func tappedOurPeople() {
         presenter.didTapOurPeopleButton()
     }
-    
-    
+
+    @objc private func tappedOurApps() {
+        presenter.didTapOurAppsButton()
+    }
 
 }

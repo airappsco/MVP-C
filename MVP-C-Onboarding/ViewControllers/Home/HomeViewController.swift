@@ -13,6 +13,7 @@ final class HomeViewController: UIViewController {
     private let compValuesButton = RoundUIButton(title: "Company Values", color: ThemeColors.topLeftTileColor)
     private let ourPeopleButton = RoundUIButton(title: "Our People", color: ThemeColors.bottomLeftTileColor)
     private let ourAppsButton = RoundUIButton(title: "Our Apps", color: ThemeColors.topRightTileColor)
+    private let teamFunButton = RoundUIButton(title: "Team Fun", color: ThemeColors.bottomRightTileColor)
     
     // Tiles
     private let topLeftTile = ClippedCornerRectView(
@@ -62,6 +63,7 @@ final class HomeViewController: UIViewController {
         setupCompanyValuesButton()
         setupOurPeopleButton()
         setupOurAppsButton()
+        setupTeamFunButton()
     }
     
     private func setupTiles() {
@@ -121,6 +123,15 @@ final class HomeViewController: UIViewController {
         ourAppsButton.heightAnchor.constraint(equalToConstant: Dimensions.buttonHeight).isActive = true
         ourAppsButton.addTarget(self, action: #selector(tappedOurApps), for: .touchUpInside)
     }
+    
+    private func setupTeamFunButton() {
+        bottomRightTile.addSubview(teamFunButton)
+        teamFunButton.centerXAnchor.constraint(equalTo: bottomRightTile.centerXAnchor).isActive = true
+        teamFunButton.centerYAnchor.constraint(equalTo: bottomRightTile.centerYAnchor).isActive = true
+        teamFunButton.widthAnchor.constraint(equalToConstant: Dimensions.buttonWidth).isActive = true
+        teamFunButton.heightAnchor.constraint(equalToConstant: Dimensions.buttonHeight).isActive = true
+        teamFunButton.addTarget(self, action: #selector(tappedTeamFun), for: .touchUpInside)
+    }
 
     @objc private func tappedCompanyValues() {
         presenter.didTapCompanyValuesButton()
@@ -132,6 +143,10 @@ final class HomeViewController: UIViewController {
 
     @objc private func tappedOurApps() {
         presenter.didTapOurAppsButton()
+    }
+    
+    @objc private func tappedTeamFun() {
+        // TODO: - Add didTapTeamFunButton to the presenter and implement call here
     }
 
 }

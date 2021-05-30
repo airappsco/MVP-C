@@ -23,5 +23,5 @@ enum ThemeColors {
     
     // MARK: - Common for various UI Elements
     static let borderColor = UIColor.white
-    static let shadowColor = UIColor.systemGray3
+    static let shadowColor = ColorSupport.systemGray3
 }

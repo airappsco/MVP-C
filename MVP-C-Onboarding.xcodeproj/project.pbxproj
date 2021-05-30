@@ -154,7 +154,7 @@
 				4FEABFC2265AB915009A5D2E /* CompanyValues */,
 				4FEABFC3265AB92B009A5D2E /* OurPeople */,
 				4F82CCA2265C57970072F97F /* OurApps */,
-				4FF6AAF92663EF40006DB682 /* Architecture */,
+				4FF6AAF92663EF40006DB682 /* TeamFun */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -282,11 +282,11 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
-		4FF6AAF92663EF40006DB682 /* Architecture */ = {
+		4FF6AAF92663EF40006DB682 /* TeamFun */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			path = Architecture;
+			path = TeamFun;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

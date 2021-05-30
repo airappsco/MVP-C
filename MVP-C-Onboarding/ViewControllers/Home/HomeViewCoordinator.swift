@@ -11,6 +11,7 @@ import UIKit
 protocol HomeCoordinatorProtocol: Coordinator {
     func navigateToCompanyValues()
     func navigateToOurPeople()
+    func navigateToOurApps()
 }
 
 
@@ -38,7 +39,7 @@ final class HomeCoordinator: HomeCoordinatorProtocol {
     
     
     func navigateToCompanyValues() {
-        //Navigate to users
+        //Navigate to Company Values
         print("Navigate to Company Values called :)")
         let coordinator = CompanyValuesCoordinator(navigationController: navigationController, parent: self)
         start(coordinator)
@@ -47,6 +48,12 @@ final class HomeCoordinator: HomeCoordinatorProtocol {
     func navigateToOurPeople() {
         print("Navigating to Our People")
         let coordinator = OurPeopleCoordinator(navigationController: navigationController, parent: self)
+        start(coordinator)
+    }
+    
+    func navigateToOurApps() {
+        print("Navigating to Our Apps")
+        let coordinator = OurAppsCoordinator(navigationController: navigationController, parent: self)
         start(coordinator)
     }
 }

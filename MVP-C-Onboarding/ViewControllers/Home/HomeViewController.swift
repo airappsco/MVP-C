@@ -14,13 +14,22 @@ final class HomeViewController: UIViewController {
     
     private let ourAppsButton = RoundUIButton(title: "Our Apps")
     
-    private let topLeftTile = ClippedCornerRectView(round: [Corners.topLeft], color: ThemeColors.coolBlue)
+    private let topLeftTile = ClippedCornerRectView(
+        round: [Corners.topLeft],
+        color: ThemeColors.topLeftTileBackgroundColor)
+    
+    private let topRightTile = ClippedCornerRectView(
+        round: [Corners.topRight],
+        color: ThemeColors.topRightTileBackgroundColor)
     
     private var presenter: HomePresenterProtocol
     
     enum Dimensions {
         static let buttonWidth: CGFloat = 175
         static let buttonHeight: CGFloat = 50
+        static let tileMargin: CGFloat = 10
+        static let tileWidth: CGFloat = UIScreen.main.bounds.width / 2 - 40
+        static let tileHeight: CGFloat = UIScreen.main.bounds.height / 3
     }
 
     init(presenter: HomePresenterProtocol) {
@@ -48,10 +57,34 @@ final class HomeViewController: UIViewController {
     private func setupTiles() {
         let safeArea = view.safeAreaLayoutGuide
         view.addSubview(topLeftTile)
-        topLeftTile.topAnchor.constraint(equalTo: safeArea.topAnchor, constant: 10).isActive = true
-        topLeftTile.leftAnchor.constraint(equalTo: safeArea.leftAnchor, constant: 10).isActive = true
-        topLeftTile.heightAnchor.constraint(equalToConstant: view.frame.height / 3).isActive = true
-        topLeftTile.widthAnchor.constraint(equalToConstant: view.frame.width / 2 - 40).isActive = true
+        topLeftTile.topAnchor.constraint(equalTo: safeArea.topAnchor, constant: Dimensions.tileMargin).isActive = true
+        topLeftTile.leftAnchor.constraint(equalTo: safeArea.leftAnchor, constant: Dimensions.tileMargin).isActive = true
+        topLeftTile.widthAnchor.constraint(equalToConstant: Dimensions.tileWidth).isActive = true
+        topLeftTile.heightAnchor.constraint(equalToConstant: Dimensions.tileHeight).isActive = true
+    }
+    
+    private func setupTile(_ tile: ClippedCornerRectView, in corner: CACornerMask) {
+        let safeArea = view.safeAreaLayoutGuide
+        view.addSubview(tile)
+        tile.widthAnchor.constraint(equalToConstant: Dimensions.tileWidth).isActive = true
+        tile.heightAnchor.constraint(equalToConstant: Dimensions.tileHeight).isActive = true
+        
+        switch corner {
+        case Corners.topLeft:
+            tile.topAnchor.constraint(equalTo: safeArea.topAnchor, constant: Dimensions.tileMargin).isActive = true
+            tile.leftAnchor.constraint(equalTo: safeArea.leftAnchor, constant: Dimensions.tileMargin).isActive = true
+        case Corners.topRight:
+            tile.topAnchor.constraint(equalTo: safeArea.topAnchor, constant: Dimensions.tileMargin).isActive = true
+            tile.rightAnchor.constraint(equalTo: safeArea.rightAnchor, constant: -Dimensions.tileMargin).isActive = true
+        case Corners.bottomLeft:
+            tile.bottomAnchor.constraint(equalTo: safeArea.bottomAnchor, constant: -Dimensions.tileMargin).isActive = true
+            tile.leftAnchor.constraint(equalTo: safeArea.leftAnchor, constant: Dimensions.tileMargin).isActive = true
+        case Corners.bottomRight:
+            tile.rightAnchor.constraint(equalTo: safeArea.rightAnchor, constant: -Dimensions.tileMargin).isActive = true
+            tile.bottomAnchor.constraint(equalTo: safeArea.bottomAnchor, constant: -Dimensions.tileMargin).isActive = true
+        default:
+            break
+        }
     }
     
     private func setupCompanyValuesButton() {

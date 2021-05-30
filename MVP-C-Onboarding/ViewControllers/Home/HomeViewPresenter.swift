@@ -30,6 +30,6 @@ final class HomePresenter: HomePresenterProtocol {
     }
     
     func didTapOurAppsButton() {
-        // TODO: - Coordinator add navigate to our apps
+        coordinator?.navigateToOurApps()
     }
 }

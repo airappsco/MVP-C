@@ -8,11 +8,11 @@
 import UIKit
 
 final class RoundUIButton: UIButton {
-    
-    init(title: String = "No title") {
+        
+    init(title: String = "No title", color: UIColor = ThemeColors.buttonColor) {
         super.init(frame: .zero)
         setTitle(title, for: .normal)
-        setupButton()
+        setupButton(color: color)
    }
     
     required init?(coder aDecoder: NSCoder) {
@@ -23,19 +23,19 @@ final class RoundUIButton: UIButton {
         didSet{
             if isHighlighted {
                 backgroundColor = .white
-                setTitleColor(ThemeColors.coolBlue, for: .highlighted)
+                setTitleColor(ThemeColors.buttonColor, for: .highlighted)
 //                layer.shadowOffset = CGSize(width: 0.0, height: 0.0)
             } else {
-                backgroundColor = ThemeColors.coolBlue
+                backgroundColor = ThemeColors.buttonColor
                 titleLabel?.textColor = .white
 //                layer.shadowOffset = CGSize(width: 0.0, height: 4.0)
             }
         }
     }
     
-    private func setupButton() {
+    private func setupButton(color: UIColor) {
         titleLabel?.textColor = .white
-        backgroundColor = ThemeColors.coolBlue
+        backgroundColor = color
         layer.cornerRadius = 20
         layer.masksToBounds = true
         layer.borderColor = UIColor.white.cgColor

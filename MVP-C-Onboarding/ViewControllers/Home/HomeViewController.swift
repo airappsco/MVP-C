@@ -10,17 +10,25 @@ import UIKit
 final class HomeViewController: UIViewController {
     
     private let compValuesButton = RoundUIButton(title: "Company Values")
-    private let ourPeopleButton = RoundUIButton(title: "Our People")
+    private let ourPeopleButton = RoundUIButton(title: "Our People", color: ThemeColors.bottomLeftTileColor)
     
     private let ourAppsButton = RoundUIButton(title: "Our Apps")
     
     private let topLeftTile = ClippedCornerRectView(
         round: [Corners.topLeft],
-        color: ThemeColors.topLeftTileBackgroundColor)
+        color: ThemeColors.topLeftTileColor)
     
     private let topRightTile = ClippedCornerRectView(
         round: [Corners.topRight],
-        color: ThemeColors.topRightTileBackgroundColor)
+        color: ThemeColors.topRightTileColor)
+    
+    private let bottomLeftTile = ClippedCornerRectView(
+        round: [Corners.bottomLeft],
+        color: ThemeColors.bottomLeftTileColor)
+    
+    private let bottomRightTile = ClippedCornerRectView(
+        round: [Corners.bottomRight],
+        color: ThemeColors.bottomRightTileColor)
     
     private var presenter: HomePresenterProtocol
     
@@ -55,12 +63,10 @@ final class HomeViewController: UIViewController {
     }
     
     private func setupTiles() {
-        let safeArea = view.safeAreaLayoutGuide
-        view.addSubview(topLeftTile)
-        topLeftTile.topAnchor.constraint(equalTo: safeArea.topAnchor, constant: Dimensions.tileMargin).isActive = true
-        topLeftTile.leftAnchor.constraint(equalTo: safeArea.leftAnchor, constant: Dimensions.tileMargin).isActive = true
-        topLeftTile.widthAnchor.constraint(equalToConstant: Dimensions.tileWidth).isActive = true
-        topLeftTile.heightAnchor.constraint(equalToConstant: Dimensions.tileHeight).isActive = true
+        setupTile(topLeftTile, in: Corners.topLeft)
+        setupTile(topRightTile, in: Corners.topRight)
+        setupTile(bottomLeftTile, in: Corners.bottomLeft)
+        setupTile(bottomRightTile, in: Corners.bottomRight)
     }
     
     private func setupTile(_ tile: ClippedCornerRectView, in corner: CACornerMask) {

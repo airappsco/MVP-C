@@ -33,6 +33,7 @@
 		4FEABFD5265AC221009A5D2E /* OurPeopleCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FEABFD4265AC221009A5D2E /* OurPeopleCoordinator.swift */; };
 		4FEABFD7265AF030009A5D2E /* ClippedCornerRectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FEABFD6265AF030009A5D2E /* ClippedCornerRectView.swift */; };
 		4FEABFDA265B04C3009A5D2E /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FEABFD9265B04C3009A5D2E /* UIView+Extension.swift */; };
+		4FF6AAF82663A7AA006DB682 /* ColorSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF6AAF72663A7AA006DB682 /* ColorSupport.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,6 +86,7 @@
 		4FEABFD4265AC221009A5D2E /* OurPeopleCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OurPeopleCoordinator.swift; sourceTree = "<group>"; };
 		4FEABFD6265AF030009A5D2E /* ClippedCornerRectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClippedCornerRectView.swift; sourceTree = "<group>"; };
 		4FEABFD9265B04C3009A5D2E /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+		4FF6AAF72663A7AA006DB682 /* ColorSupport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorSupport.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -179,6 +181,7 @@
 		4F55F30026567B4C00BB6314 /* MVP-C-Onboarding */ = {
 			isa = PBXGroup;
 			children = (
+				4FF6AAF62663A796006DB682 /* Helpers */,
 				4FEABFD8265B0498009A5D2E /* Extensions */,
 				4F2EB09926567D37006C604D /* Constants */,
 				4F2EB09A26567D40006C604D /* Common */,
@@ -225,8 +228,8 @@
 		4FEABFBA265AB773009A5D2E /* ViewElements */ = {
 			isa = PBXGroup;
 			children = (
-				4FEABFBD265AB890009A5D2E /* RoundedUIButton.swift */,
 				4FEABFBB265AB79C009A5D2E /* ThemeColors.swift */,
+				4FEABFBD265AB890009A5D2E /* RoundedUIButton.swift */,
 				4FEABFD6265AF030009A5D2E /* ClippedCornerRectView.swift */,
 			);
 			path = ViewElements;
@@ -268,6 +271,14 @@
 				4FEABFD9265B04C3009A5D2E /* UIView+Extension.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		4FF6AAF62663A796006DB682 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				4FF6AAF72663A7AA006DB682 /* ColorSupport.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -410,6 +421,7 @@
 				4FEABFB9265AB6E5009A5D2E /* Coordinator.swift in Sources */,
 				4FEABFC9265AB992009A5D2E /* HomeViewPresenter.swift in Sources */,
 				4FEABFC5265AB966009A5D2E /* HomeViewController.swift in Sources */,
+				4FF6AAF82663A7AA006DB682 /* ColorSupport.swift in Sources */,
 				4F55F30426567B4C00BB6314 /* SceneDelegate.swift in Sources */,
 				4FEABFDA265B04C3009A5D2E /* UIView+Extension.swift in Sources */,
 				4FEABFD5265AC221009A5D2E /* OurPeopleCoordinator.swift in Sources */,

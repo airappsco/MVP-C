@@ -39,13 +39,13 @@ final class HomeCoordinator: HomeCoordinatorProtocol {
     
     func navigateToCompanyValues() {
         //Navigate to users
-        print("Navigate to users called :)")
+        print("Navigate to Company Values called :)")
         let coordinator = CompanyValuesCoordinator(navigationController: navigationController, parent: self)
         start(coordinator)
     }
     
     func navigateToOurPeople() {
-        print("Navigating to Details")
+        print("Navigating to Our People")
         let coordinator = OurPeopleCoordinator(navigationController: navigationController, parent: self)
         start(coordinator)
     }

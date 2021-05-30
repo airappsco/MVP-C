@@ -33,7 +33,7 @@ final class CompanyValuesViewController: UIViewController, UITableViewDelegate, 
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         title = "Air Apps Goals ⚽️ and Values 💎"
-        view.backgroundColor = .systemGray
+        view.backgroundColor = ThemeColors.companyValuesBackgroundColor
         
 //        setupCoordinator()
         setupTableView()

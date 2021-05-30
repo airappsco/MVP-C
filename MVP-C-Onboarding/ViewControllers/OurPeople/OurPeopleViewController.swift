@@ -23,6 +23,6 @@ final class OurPeopleViewController: UIViewController {
         super.viewDidLoad()
 
         title = "🦸 Our Heroes 🦸‍♀️"
-        view.backgroundColor = .systemRed
+        view.backgroundColor = ThemeColors.ourPeopleBackgroundColor
     }
 }

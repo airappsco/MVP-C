@@ -23,6 +23,6 @@ final class OurAppsViewController: UIViewController {
         super.viewDidLoad()
         
         title = "📱 Our Apps 📱"
-        view.backgroundColor = .brown
+        view.backgroundColor = ThemeColors.ourAppsBackgroundColor
     }
 }

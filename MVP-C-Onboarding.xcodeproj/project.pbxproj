@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		4F55F30226567B4C00BB6314 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F55F30126567B4C00BB6314 /* AppDelegate.swift */; };
 		4F55F30426567B4C00BB6314 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F55F30326567B4C00BB6314 /* SceneDelegate.swift */; };
-		4F55F30626567B4C00BB6314 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F55F30526567B4C00BB6314 /* ViewController.swift */; };
 		4F55F30B26567B4E00BB6314 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F55F30A26567B4E00BB6314 /* Assets.xcassets */; };
 		4F55F30E26567B4E00BB6314 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F55F30C26567B4E00BB6314 /* LaunchScreen.storyboard */; };
 		4F55F31926567B4E00BB6314 /* MVP_C_OnboardingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F55F31826567B4E00BB6314 /* MVP_C_OnboardingTests.swift */; };
@@ -34,6 +33,8 @@
 		4FEABFD7265AF030009A5D2E /* ClippedCornerRectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FEABFD6265AF030009A5D2E /* ClippedCornerRectView.swift */; };
 		4FEABFDA265B04C3009A5D2E /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FEABFD9265B04C3009A5D2E /* UIView+Extension.swift */; };
 		4FF6AAF82663A7AA006DB682 /* ColorSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF6AAF72663A7AA006DB682 /* ColorSupport.swift */; };
+		4FF6AAFB26642A02006DB682 /* StandardUILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF6AAFA26642A02006DB682 /* StandardUILabel.swift */; };
+		4FF8B49D26682C67006CB4BC /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 4FF8B49C26682C67006CB4BC /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,7 +58,6 @@
 		4F55F2FE26567B4C00BB6314 /* MVP-C-Onboarding.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MVP-C-Onboarding.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F55F30126567B4C00BB6314 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4F55F30326567B4C00BB6314 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		4F55F30526567B4C00BB6314 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		4F55F30A26567B4E00BB6314 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4F55F30D26567B4E00BB6314 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4F55F30F26567B4E00BB6314 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -87,6 +87,8 @@
 		4FEABFD6265AF030009A5D2E /* ClippedCornerRectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClippedCornerRectView.swift; sourceTree = "<group>"; };
 		4FEABFD9265B04C3009A5D2E /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		4FF6AAF72663A7AA006DB682 /* ColorSupport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorSupport.swift; sourceTree = "<group>"; };
+		4FF6AAFA26642A02006DB682 /* StandardUILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandardUILabel.swift; sourceTree = "<group>"; };
+		4FF8B49C26682C67006CB4BC /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -190,10 +192,10 @@
 				4F2EB09D26568042006C604D /* ViewControllers */,
 				4F55F30126567B4C00BB6314 /* AppDelegate.swift */,
 				4F55F30326567B4C00BB6314 /* SceneDelegate.swift */,
-				4F55F30526567B4C00BB6314 /* ViewController.swift */,
 				4F55F30A26567B4E00BB6314 /* Assets.xcassets */,
 				4F2EB09C26567F97006C604D /* SupportingFiles */,
 				4F55F30F26567B4E00BB6314 /* Info.plist */,
+				4FF8B49C26682C67006CB4BC /* README.md */,
 			);
 			path = "MVP-C-Onboarding";
 			sourceTree = "<group>";
@@ -232,6 +234,7 @@
 				4FEABFBB265AB79C009A5D2E /* ThemeColors.swift */,
 				4FEABFBD265AB890009A5D2E /* RoundedUIButton.swift */,
 				4FEABFD6265AF030009A5D2E /* ClippedCornerRectView.swift */,
+				4FF6AAFA26642A02006DB682 /* StandardUILabel.swift */,
 			);
 			path = ViewElements;
 			sourceTree = "<group>";
@@ -392,6 +395,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4FF8B49D26682C67006CB4BC /* README.md in Resources */,
 				4F55F30E26567B4E00BB6314 /* LaunchScreen.storyboard in Resources */,
 				4F55F30B26567B4E00BB6314 /* Assets.xcassets in Resources */,
 			);
@@ -424,7 +428,6 @@
 				4FEABFCB265ABA3E009A5D2E /* CompanyValuesViewController.swift in Sources */,
 				4FEABFC0265AB8EA009A5D2E /* Users.swift in Sources */,
 				4FEABFBE265AB890009A5D2E /* RoundedUIButton.swift in Sources */,
-				4F55F30626567B4C00BB6314 /* ViewController.swift in Sources */,
 				4F55F30226567B4C00BB6314 /* AppDelegate.swift in Sources */,
 				4FEABFB9265AB6E5009A5D2E /* Coordinator.swift in Sources */,
 				4FEABFC9265AB992009A5D2E /* HomeViewPresenter.swift in Sources */,
@@ -433,6 +436,7 @@
 				4F55F30426567B4C00BB6314 /* SceneDelegate.swift in Sources */,
 				4FEABFDA265B04C3009A5D2E /* UIView+Extension.swift in Sources */,
 				4FEABFD5265AC221009A5D2E /* OurPeopleCoordinator.swift in Sources */,
+				4FF6AAFB26642A02006DB682 /* StandardUILabel.swift in Sources */,
 				4FEABFB7265AB67D009A5D2E /* Constants.swift in Sources */,
 				4F62465B265D90EC00E89DF2 /* OurAppsViewController.swift in Sources */,
 				4FEABFCD265ABA58009A5D2E /* CompanyValuesCoordinator.swift in Sources */,

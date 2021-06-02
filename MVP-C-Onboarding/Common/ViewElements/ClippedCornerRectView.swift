@@ -14,7 +14,7 @@ enum Corners {
     static let bottomRight = CACornerMask.layerMaxXMaxYCorner
 }
 
-class ClippedCornerRectView: UIView {
+final class ClippedCornerRectView: UIView {
     
     let cornerMaskview = UIView(frame: CGRect(x: 39, y: 39, width: 40, height: 40))
     
@@ -32,10 +32,6 @@ class ClippedCornerRectView: UIView {
         layer.cornerRadius = 20
         layer.maskedCorners = corners
         translatesAutoresizingMaskIntoConstraints = false
-//        cornerMaskview.backgroundColor = .systemRed
-//        cornerMaskview.layer.cornerRadius = 20
-//        mask = cornerMaskview
-//        mask?.clipsToBounds = true
         setShadow()
     }
 }

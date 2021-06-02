@@ -9,6 +9,8 @@ import UIKit
 
 final class HomeViewController: UIViewController {
 
+    private let messageLabel = StandardUILabel(text: "We are Fast 🚀, whilst having a Blast!🎉", fontSize: 15, alignment: .center)
+
     // Navigation buttons
     private let compValuesButton = RoundUIButton(title: "Company Values", color: ThemeColors.topLeftTileColor)
     private let ourPeopleButton = RoundUIButton(title: "Our People", color: ThemeColors.bottomLeftTileColor)
@@ -35,11 +37,12 @@ final class HomeViewController: UIViewController {
     private var presenter: HomePresenterProtocol
 
     enum Dimensions {
-        static let buttonWidth: CGFloat = 175
+        static let buttonWidth: CGFloat = 150
         static let buttonHeight: CGFloat = 50
         static let tileMargin: CGFloat = 10
         static let tileWidth: CGFloat = UIScreen.main.bounds.width / 2 - 40
         static let tileHeight: CGFloat = UIScreen.main.bounds.height / 3
+        static let tileMarginFromCenter: CGFloat = 40
     }
 
     init(presenter: HomePresenterProtocol) {
@@ -57,6 +60,7 @@ final class HomeViewController: UIViewController {
         view.backgroundColor = ThemeColors.homeBackgroundColor
         setupTiles()
         setupButtons()
+        setupMessageLabel()
     }
 
     private func setupButtons() {
@@ -77,22 +81,28 @@ final class HomeViewController: UIViewController {
     private func setupTile(_ tile: ClippedCornerRectView, in corner: CACornerMask) {
         let safeArea = view.safeAreaLayoutGuide
         view.addSubview(tile)
-        tile.widthAnchor.constraint(equalToConstant: Dimensions.tileWidth).isActive = true
-        tile.heightAnchor.constraint(equalToConstant: Dimensions.tileHeight).isActive = true
     
         switch corner {
         case Corners.topLeft:
             tile.topAnchor.constraint(equalTo: safeArea.topAnchor, constant: Dimensions.tileMargin).isActive = true
             tile.leftAnchor.constraint(equalTo: safeArea.leftAnchor, constant: Dimensions.tileMargin).isActive = true
+            tile.rightAnchor.constraint(equalTo: safeArea.centerXAnchor, constant: -Dimensions.tileMarginFromCenter).isActive = true
+            tile.bottomAnchor.constraint(equalTo: safeArea.centerYAnchor, constant: -Dimensions.tileMarginFromCenter).isActive = true
         case Corners.topRight:
             tile.topAnchor.constraint(equalTo: safeArea.topAnchor, constant: Dimensions.tileMargin).isActive = true
             tile.rightAnchor.constraint(equalTo: safeArea.rightAnchor, constant: -Dimensions.tileMargin).isActive = true
+            tile.leftAnchor.constraint(equalTo: safeArea.centerXAnchor, constant: Dimensions.tileMarginFromCenter).isActive = true
+            tile.bottomAnchor.constraint(equalTo: safeArea.centerYAnchor, constant: -Dimensions.tileMarginFromCenter).isActive = true
         case Corners.bottomLeft:
             tile.bottomAnchor.constraint(equalTo: safeArea.bottomAnchor, constant: -Dimensions.tileMargin).isActive = true
             tile.leftAnchor.constraint(equalTo: safeArea.leftAnchor, constant: Dimensions.tileMargin).isActive = true
+            tile.rightAnchor.constraint(equalTo: safeArea.centerXAnchor, constant: -Dimensions.tileMarginFromCenter).isActive = true
+            tile.topAnchor.constraint(equalTo: safeArea.centerYAnchor, constant: Dimensions.tileMarginFromCenter).isActive = true
         case Corners.bottomRight:
             tile.rightAnchor.constraint(equalTo: safeArea.rightAnchor, constant: -Dimensions.tileMargin).isActive = true
             tile.bottomAnchor.constraint(equalTo: safeArea.bottomAnchor, constant: -Dimensions.tileMargin).isActive = true
+            tile.leftAnchor.constraint(equalTo: safeArea.centerXAnchor, constant: Dimensions.tileMarginFromCenter).isActive = true
+            tile.topAnchor.constraint(equalTo: safeArea.centerYAnchor, constant: Dimensions.tileMarginFromCenter).isActive = true
         default:
             break
         }
@@ -105,6 +115,14 @@ final class HomeViewController: UIViewController {
         button.widthAnchor.constraint(equalToConstant: Dimensions.buttonWidth).isActive = true
         button.heightAnchor.constraint(equalToConstant: Dimensions.buttonHeight).isActive = true
         button.addTarget(self, action: action, for: event)
+    }
+    
+    private func setupMessageLabel() {
+        let safeArea = view.safeAreaLayoutGuide
+        view.addSubview(messageLabel)
+        messageLabel.centerYAnchor.constraint(equalTo: safeArea.centerYAnchor).isActive = true
+        messageLabel.leftAnchor.constraint(equalTo: safeArea.leftAnchor, constant: 20).isActive = true
+        messageLabel.rightAnchor.constraint(equalTo: safeArea.rightAnchor, constant: -20).isActive = true
     }
 
     @objc private func tappedCompanyValues() {

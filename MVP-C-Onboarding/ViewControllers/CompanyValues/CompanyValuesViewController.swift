@@ -45,6 +45,7 @@ final class CompanyValuesViewController: UIViewController, UITableViewDelegate, 
         view.addSubview(tableView)
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.backgroundColor = ThemeColors.companyValuesBackgroundColor
     }
     
 //    private func setupPresenter() {

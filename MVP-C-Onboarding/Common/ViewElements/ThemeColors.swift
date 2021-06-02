@@ -11,6 +11,7 @@ import UIKit
 enum ThemeColors {
     // MARK: - Home Screen
     static let homeBackgroundColor = ColorSupport.secondarySystemBackground
+    static let messageLabelTextColor = ColorSupport.systemGray
     // Tiles
     static let topLeftTileColor = ColorSupport.systemBlue
     static let topRightTileColor = ColorSupport.systemGreen

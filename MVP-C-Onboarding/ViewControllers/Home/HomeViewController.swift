@@ -43,6 +43,7 @@ final class HomeViewController: UIViewController {
         static let tileWidth: CGFloat = UIScreen.main.bounds.width / 2 - 40
         static let tileHeight: CGFloat = UIScreen.main.bounds.height / 3
         static let tileMarginFromCenter: CGFloat = 40
+        static let messagePaddingFromEdges: CGFloat = 20
     }
 
     init(presenter: HomePresenterProtocol) {
@@ -110,19 +111,23 @@ final class HomeViewController: UIViewController {
 
     private func setupButton(_ button: UIButton, on tile: ClippedCornerRectView, addTarget action: Selector, for event: UIControl.Event = .touchUpInside) {
         tile.addSubview(button)
-        button.centerXAnchor.constraint(equalTo: tile.centerXAnchor).isActive = true
-        button.centerYAnchor.constraint(equalTo: tile.centerYAnchor).isActive = true
-        button.widthAnchor.constraint(equalToConstant: Dimensions.buttonWidth).isActive = true
-        button.heightAnchor.constraint(equalToConstant: Dimensions.buttonHeight).isActive = true
+        button.anchor(
+            width: Dimensions.buttonWidth,
+            height: Dimensions.buttonHeight,
+            centerHorizontal: tile.centerXAnchor,
+            centerVertical: tile.centerYAnchor)
         button.addTarget(self, action: action, for: event)
     }
     
     private func setupMessageLabel() {
         let safeArea = view.safeAreaLayoutGuide
         view.addSubview(messageLabel)
-        messageLabel.centerYAnchor.constraint(equalTo: safeArea.centerYAnchor).isActive = true
-        messageLabel.leftAnchor.constraint(equalTo: safeArea.leftAnchor, constant: 20).isActive = true
-        messageLabel.rightAnchor.constraint(equalTo: safeArea.rightAnchor, constant: -20).isActive = true
+        messageLabel.anchor(
+            left: safeArea.leftAnchor,
+            paddingLeft: Dimensions.messagePaddingFromEdges,
+            right: safeArea.rightAnchor,
+            paddingRight: -Dimensions.messagePaddingFromEdges,
+            centerVertical: safeArea.centerYAnchor)
     }
 
     @objc private func tappedCompanyValues() {

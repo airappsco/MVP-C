@@ -58,6 +58,10 @@ final class HomeViewController: UIViewController {
         super.viewDidLoad()
         title = "Air Onboarding"
         view.backgroundColor = ThemeColors.homeBackgroundColor
+        setupViewElements()
+    }
+
+    private func setupViewElements() {
         setupTiles()
         setupButtons()
         setupMessageLabel()

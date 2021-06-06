@@ -8,7 +8,14 @@
 import UIKit
 
 final class CompanyValuesViewController: UIViewController {
+    private let placeholderLabel = StandardUILabel(text: "Speed \nTransparency", fontSize: 20, fontStyle: .bold, alignment: .left, textColor: ThemeColors.labelTextColor, multiline: true)
     private var presenter: CompanyValuesPresenterProtocol
+    
+    enum Dimensions {
+        static let placeholderLabelPaddingTop: CGFloat = 30
+        static let placeholderLabelPaddingLeft: CGFloat = 20
+        static let placeholderLabelPaddingRight: CGFloat = 20
+    }
 
     init(presenter: CompanyValuesPresenterProtocol) {
         self.presenter = presenter
@@ -24,10 +31,27 @@ final class CompanyValuesViewController: UIViewController {
 
         title = "Air Apps Goals ⚽️ and Values 💎"
         view.backgroundColor = ThemeColors.companyValuesBackgroundColor
+        setupViewElements()
     }
 
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         presenter.didTapGoBack()
+    }
+    
+    private func setupViewElements() {
+        setupPlaceHolderLabel()
+    }
+    
+    private func setupPlaceHolderLabel() {
+        let safeArea = view.safeAreaLayoutGuide
+        view.addSubview(placeholderLabel)
+        placeholderLabel.anchor(
+            top: safeArea.topAnchor,
+            paddingTop: Dimensions.placeholderLabelPaddingTop,
+            left: safeArea.leftAnchor,
+            paddingLeft: Dimensions.placeholderLabelPaddingLeft,
+            right: safeArea.rightAnchor,
+            paddingRight: Dimensions.placeholderLabelPaddingRight)
     }
 }

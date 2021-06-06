@@ -8,7 +8,7 @@
 import UIKit
 
 final class HomeViewController: UIViewController {
-    private let messageLabel = StandardUILabel(text: "We are Fast 🚀, whilst having a Blast!🎉", fontSize: 15, alignment: .center)
+    private let messageLabel = StandardUILabel(text: "We are Fast 🚀, whilst having a Blast!🎉", fontSize: Dimensions.messageFontSize, alignment: .center)
 
     // Navigation buttons
     private let compValuesButton = RoundUIButton(title: "Company Values", color: ThemeColors.topLeftTileColor)
@@ -43,6 +43,7 @@ final class HomeViewController: UIViewController {
         static let tileHeight: CGFloat = UIScreen.main.bounds.height / 3
         static let tileMarginFromCenter: CGFloat = 40
         static let messagePaddingFromEdges: CGFloat = 20
+        static let messageFontSize: CGFloat = 15
     }
 
     init(presenter: HomePresenterProtocol) {

@@ -10,7 +10,7 @@ import UIKit
 extension UIView {
     func setShadow() {
         layer.shadowColor = ThemeColors.shadowColor.cgColor
-        layer.shadowOffset = CGSize(width: 4.0, height: 4.0)
+        layer.shadowOffset = Constants.shadowOffset
         layer.shadowRadius = Constants.shadowRadius
         layer.shadowOpacity = Constants.shadowOpacity
         clipsToBounds = true

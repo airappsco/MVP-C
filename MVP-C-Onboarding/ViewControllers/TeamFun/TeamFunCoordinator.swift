@@ -23,7 +23,11 @@ final class TeamFunCoordinator: TeamFunCoordinatorProtocol {
     }
     
     func start() {
-        // START
+        let presenter = TeamFunPresenter(coordinator: self)
+        let viewController = TeamFunViewController(presenter: presenter)
+        presenter.view = viewController
+        let teamFunNavigationController = UINavigationController(rootViewController: viewController)
+        navigationController.present(teamFunNavigationController, animated: true)
     }
     
     func finish() {

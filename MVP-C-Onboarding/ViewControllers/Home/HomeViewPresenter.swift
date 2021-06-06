@@ -11,6 +11,7 @@ protocol HomePresenterProtocol {
     func didTapCompanyValuesButton()
     func didTapOurPeopleButton()
     func didTapOurAppsButton()
+    func didTapTeamFun()
 }
 
 final class HomePresenter: HomePresenterProtocol {
@@ -31,5 +32,9 @@ final class HomePresenter: HomePresenterProtocol {
     
     func didTapOurAppsButton() {
         coordinator?.navigateToOurApps()
+    }
+    
+    func didTapTeamFun() {
+        coordinator?.navigateToTeamFun()
     }
 }

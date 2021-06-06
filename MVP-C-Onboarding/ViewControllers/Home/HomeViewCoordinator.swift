@@ -12,6 +12,7 @@ protocol HomeCoordinatorProtocol: Coordinator {
     func navigateToCompanyValues()
     func navigateToOurPeople()
     func navigateToOurApps()
+    func navigateToTeamFun()
 }
 
 
@@ -24,7 +25,7 @@ final class HomeCoordinator: HomeCoordinatorProtocol {
     init(window: UIWindow) {
         self.window = window
         navigationController = UINavigationController()
-//        navigationController.navigationBar.prefersLargeTitles = true
+        navigationController.navigationBar.prefersLargeTitles = true
     }
     
     func start() {
@@ -54,6 +55,12 @@ final class HomeCoordinator: HomeCoordinatorProtocol {
     func navigateToOurApps() {
         print("Navigating to Our Apps")
         let coordinator = OurAppsCoordinator(navigationController: navigationController, parent: self)
+        start(coordinator)
+    }
+    
+    func navigateToTeamFun() {
+        print("Navigating to Team Fun")
+        let coordinator = TeamFunCoordinator(navigationController: navigationController, parent: self)
         start(coordinator)
     }
 }

@@ -138,7 +138,8 @@ final class HomeViewController: UIViewController {
     }
 
     @objc private func tappedTeamFun() {
-        // TODO: - Add didTapTeamFunButton to the presenter and implement call here
+        presenter.didTapTeamFun()
     }
 
+    // add your new tapHandler below:
 }

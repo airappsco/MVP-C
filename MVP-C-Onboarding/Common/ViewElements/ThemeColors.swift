@@ -36,5 +36,7 @@ enum ThemeColors {
     static let labelTextColor = ColorSupport.label
     static let secondaryLabelTextColor = ColorSupport.secondaryLabel
     static let buttonColor = ColorSupport.systemBlue
+    static let buttonTextColor = UIColor.white
+    static let buttonBorderColor = UIColor.white.cgColor
     static let cellBackgroundColor = ColorSupport.secondarySystemGroupedBackground
 }

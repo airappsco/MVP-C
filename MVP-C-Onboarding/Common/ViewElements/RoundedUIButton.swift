@@ -25,23 +25,21 @@ final class RoundUIButton: UIButton {
     override var isHighlighted: Bool{
         didSet{
             if isHighlighted {
-                backgroundColor = .white
+                backgroundColor = ThemeColors.buttonTextColor
                 setTitleColor(mainColor, for: .highlighted)
-//                layer.shadowOffset = CGSize(width: 0.0, height: 0.0)
             } else {
                 backgroundColor = mainColor
-                titleLabel?.textColor = .white
-//                layer.shadowOffset = CGSize(width: 0.0, height: 4.0)
+                titleLabel?.textColor = ThemeColors.buttonTextColor
             }
         }
     }
     
     private func setupButton() {
-        titleLabel?.textColor = .white
+        titleLabel?.textColor = ThemeColors.buttonTextColor
         backgroundColor = mainColor
         layer.cornerRadius = 20
         layer.masksToBounds = true
-        layer.borderColor = UIColor.white.cgColor
+        layer.borderColor = ThemeColors.buttonBorderColor
         layer.borderWidth = 2
         translatesAutoresizingMaskIntoConstraints = false
         setShadow()

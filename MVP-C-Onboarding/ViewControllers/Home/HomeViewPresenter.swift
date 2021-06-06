@@ -21,19 +21,19 @@ final class HomePresenter: HomePresenterProtocol {
     init(coordinator: HomeCoordinatorProtocol) {
         self.coordinator = coordinator
     }
-    
+
     func didTapCompanyValuesButton() {
         coordinator?.navigateToCompanyValues()
     }
-    
+
     func didTapOurPeopleButton() {
         coordinator?.navigateToOurPeople()
     }
-    
+
     func didTapOurAppsButton() {
         coordinator?.navigateToOurApps()
     }
-    
+
     func didTapTeamFun() {
         coordinator?.navigateToTeamFun()
     }

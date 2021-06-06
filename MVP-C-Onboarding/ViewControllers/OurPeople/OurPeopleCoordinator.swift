@@ -14,14 +14,14 @@ protocol OurPeopleCoordinatorProtocol: Coordinator {
 final class OurPeopleCoordinator: OurPeopleCoordinatorProtocol {
     private weak var parent: Coordinator?
     var childCoordinators = [Coordinator]()
-    
+
     private let navigationController: UINavigationController
-    
+
     init(navigationController: UINavigationController, parent: Coordinator) {
         self.navigationController = navigationController
         self.parent = parent
     }
-    
+
     func start() {
         let presenter = OurPeoplePresenter(coordinator: self)
         let viewController = OurPeopleViewController(presenter: presenter)
@@ -29,9 +29,8 @@ final class OurPeopleCoordinator: OurPeopleCoordinatorProtocol {
         let ourPeopleNavigationController = UINavigationController(rootViewController: viewController)
         navigationController.present(ourPeopleNavigationController, animated: true)
     }
-    
+
     func finish() {
-        // TODO: - Implement finish.
+        parent?.childDidStop(self)
     }
-    
 }

@@ -14,12 +14,13 @@ protocol TeamFunPresenterProtocol {
 final class TeamFunPresenter: TeamFunPresenterProtocol {
     private weak var coordinator: TeamFunCoordinatorProtocol?
     weak var view: TeamFunViewController?
-    
+
     init(coordinator: TeamFunCoordinatorProtocol) {
         self.coordinator = coordinator
     }
-    
+
     func didTapGoBack() {
         print("User tapped go back from Team Fun")
+        coordinator?.finish()
     }
 }

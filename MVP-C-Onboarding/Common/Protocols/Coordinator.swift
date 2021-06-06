@@ -6,7 +6,6 @@
 //
 
 import Foundation
-//import UIKit
 
 protocol Coordinator: AnyObject {
     var childCoordinators: [Coordinator] { get set }
@@ -20,11 +19,12 @@ extension Coordinator {
         childCoordinators.append(coordinator)
         coordinator.start()
     }
-    
+
     func childDidStop(_ child: Coordinator) {
 //        childCoordinators.removeAll { $0 === child }
         for (index, coordinator) in childCoordinators.enumerated() {
             if coordinator === child {
+                print("Child coordinator has been removed at index: \(index), \(coordinator)")
                 childCoordinators.remove(at: index)
                 break
             }

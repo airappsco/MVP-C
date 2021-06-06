@@ -8,22 +8,22 @@
 import UIKit
 
 final class RoundUIButton: UIButton {
-    
+
     let mainColor: UIColor
-        
-    init(title: String = "No title", color: UIColor = ThemeColors.buttonColor) {
+
+    init(title: String = "Button", color: UIColor = ThemeColors.buttonColor) {
         mainColor = color
         super.init(frame: .zero)
         setTitle(title, for: .normal)
         setupButton()
    }
-    
+
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
     override var isHighlighted: Bool{
-        didSet{
+        didSet {
             if isHighlighted {
                 backgroundColor = ThemeColors.buttonTextColor
                 setTitleColor(mainColor, for: .highlighted)
@@ -33,7 +33,7 @@ final class RoundUIButton: UIButton {
             }
         }
     }
-    
+
     private func setupButton() {
         titleLabel?.textColor = ThemeColors.buttonTextColor
         backgroundColor = mainColor

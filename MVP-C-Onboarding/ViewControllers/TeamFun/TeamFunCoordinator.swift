@@ -14,14 +14,14 @@ protocol TeamFunCoordinatorProtocol: Coordinator {
 final class TeamFunCoordinator: TeamFunCoordinatorProtocol {
     private weak var parent: Coordinator?
     var childCoordinators = [Coordinator]()
-    
+
     private let navigationController: UINavigationController
-    
+
     init(navigationController: UINavigationController, parent: Coordinator) {
         self.navigationController = navigationController
         self.parent = parent
     }
-    
+
     func start() {
         let presenter = TeamFunPresenter(coordinator: self)
         let viewController = TeamFunViewController(presenter: presenter)
@@ -29,8 +29,8 @@ final class TeamFunCoordinator: TeamFunCoordinatorProtocol {
         let teamFunNavigationController = UINavigationController(rootViewController: viewController)
         navigationController.present(teamFunNavigationController, animated: true)
     }
-    
+
     func finish() {
-        // FINISH
+        parent?.childDidStop(self)
     }
 }

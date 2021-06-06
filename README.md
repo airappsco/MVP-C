@@ -24,6 +24,8 @@ To run the project simply clone the repo and run it using
     - Extensions
     - Constants
     - Common
+        - Protocols
+        - ViewElements
     - Model
     - ViewControllers
         - Home
@@ -69,7 +71,7 @@ final class MyNewScreenCoordinator: MyNewScreenCoordinatorProtocol {
     }
     
     func finish() {
-        // FINISH
+        parent?.childDidStop(self)
     }
 }
 ```
@@ -99,6 +101,7 @@ final class MyNewScreenPresenter: MyNewScreenPresenterProtocol {
     
     func didTapGoBack() {
         print("User tapped go back from MyNewScreen")
+        coordinator?.finish()
     }
 }
 ```
@@ -108,22 +111,27 @@ import UIKit
 
 final class MyNewScreenViewController: UIViewController {
     private var presenter: MyNewScreenPresenterProtocol
-    
+
     init(presenter: MyNewScreenPresenterProtocol) {
         self.presenter = presenter
         super.init(nibName: nil, bundle: nil)
     }
-    
+
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
         title = "😎 My Awesome New Screen 😎"
         view.backgroundColor = ThemeColors.teamFunBackgroundColor
         // or add a new Color to ThemeColors.swift and use it instead
+    }
+
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        presenter.didTapGoBack()
     }
 }
 
@@ -247,6 +255,31 @@ with:
 setupButton(teamFunButton, on: bottomRightTile, addTarget: #selector(tappedMyNewScreen))
 ```
 All. Done. Now run the project and see if it worked. 🙌
+
+## Additional notes
+
+Some parts of the project could be abstracted further to keep the code D.R.Y. for example the repetition of:
+```Swift:
+override func viewDidDisappear(_ animated: Bool) {
+    super.viewDidDisappear(animated)
+    presenter.didTapGoBack()
+}
+```
+and
+```Swift:
+func didTapGoBack() {
+    print("User tapped go back from Team Fun")
+    coordinator?.finish()
+}
+```
+and
+```Swift:
+func finish() {
+    parent?.childDidStop(self)
+}
+```
+
+But please keep it there for readability and for someone who is new to the architecture so that they can easily follow the flow of the app and grasp the architecture. 
 
 ## Support
 

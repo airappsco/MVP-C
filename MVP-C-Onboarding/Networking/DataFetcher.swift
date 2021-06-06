@@ -12,9 +12,9 @@ final class DataFetcher {
     static func getData(url: String, parameters: [String: String] = [:], completion: @escaping (Data?) -> Void) {
         let defaultSession = URLSession(configuration: .default)
         var dataTask: URLSessionDataTask?
-        
+
         dataTask?.cancel()
-        
+
         if var urlComponents = URLComponents(string: url) {
             urlComponents.queryItems = parameters.map {URLQueryItem(name: $0, value: $1)}
 
@@ -23,12 +23,11 @@ final class DataFetcher {
                 defer {
                     dataTask = nil
                 }
-                
+
                 if let responseData = data,
                     let response = response as? HTTPURLResponse,
                     response.statusCode == 200 {
                     completion(responseData)
-                                        
                 } else if let error = error {
                     print(error.localizedDescription)
                     completion(nil)

@@ -8,7 +8,6 @@
 import UIKit
 
 final class HomeViewController: UIViewController {
-
     private let messageLabel = StandardUILabel(text: "We are Fast 🚀, whilst having a Blast!🎉", fontSize: 15, alignment: .center)
 
     // Navigation buttons
@@ -69,7 +68,6 @@ final class HomeViewController: UIViewController {
         setupButton(ourAppsButton, on: topRightTile, addTarget: #selector(tappedOurApps))
         setupButton(ourPeopleButton, on: bottomLeftTile, addTarget: #selector(tappedOurPeople))
         setupButton(teamFunButton, on: bottomRightTile, addTarget: #selector(tappedTeamFun))
-        
     }
 
     private func setupTiles() {
@@ -82,7 +80,7 @@ final class HomeViewController: UIViewController {
     private func setupTile(_ tile: ClippedCornerRectView, in corner: CACornerMask) {
         let safeArea = view.safeAreaLayoutGuide
         view.addSubview(tile)
-    
+
         switch corner {
         case Corners.topLeft:
             tile.topAnchor.constraint(equalTo: safeArea.topAnchor, constant: Dimensions.tileMargin).isActive = true
@@ -118,10 +116,14 @@ final class HomeViewController: UIViewController {
             centerVertical: tile.centerYAnchor)
         button.addTarget(self, action: action, for: event)
     }
-    
+
     private func setupMessageLabel() {
         let safeArea = view.safeAreaLayoutGuide
         view.addSubview(messageLabel)
+//        messageLabel.centerYAnchor.constraint(equalTo: safeArea.centerYAnchor).isActive = true
+//        messageLabel.leftAnchor.constraint(equalTo: safeArea.leftAnchor, constant: 20).isActive = true
+//        messageLabel.rightAnchor.constraint(equalTo: safeArea.rightAnchor, constant: -20).isActive = true
+        // The constraints set below are from the UIViewExtension.swift, they do exactly the same as the lines commented out above.
         messageLabel.anchor(
             left: safeArea.leftAnchor,
             paddingLeft: Dimensions.messagePaddingFromEdges,

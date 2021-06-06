@@ -8,13 +8,20 @@
 import UIKit
 
 final class CompanyValuesViewController: UIViewController {
-    private let placeholderLabel = StandardUILabel(text: "Speed \nTransparency", fontSize: 20, fontStyle: .bold, alignment: .left, textColor: ThemeColors.labelTextColor, multiline: true)
+    private let placeholderLabel = StandardUILabel(
+        text: "Speed \nTransparency",
+        fontSize: Dimensions.placeholderLabelFontSize,
+        fontStyle: .bold,
+        alignment: .left,
+        textColor: ThemeColors.labelTextColor,
+        multiline: true)
     private var presenter: CompanyValuesPresenterProtocol
     
     enum Dimensions {
         static let placeholderLabelPaddingTop: CGFloat = 30
         static let placeholderLabelPaddingLeft: CGFloat = 20
         static let placeholderLabelPaddingRight: CGFloat = 20
+        static let placeholderLabelFontSize: CGFloat = 20
     }
 
     init(presenter: CompanyValuesPresenterProtocol) {

@@ -24,6 +24,7 @@ final class OurPeopleViewController: UIViewController {
 
         title = "🦸 Our Heroes 🦸‍♀️"
         view.backgroundColor = ThemeColors.ourPeopleBackgroundColor
+        addPlaceHolderLabel()
     }
 
     override func viewDidDisappear(_ animated: Bool) {

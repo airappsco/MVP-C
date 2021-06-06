@@ -24,6 +24,7 @@ final class OurAppsViewController: UIViewController {
 
         title = "📱 Our Apps 📱"
         view.backgroundColor = ThemeColors.ourAppsBackgroundColor
+        addPlaceHolderLabel()
     }
 
     override func viewDidDisappear(_ animated: Bool) {

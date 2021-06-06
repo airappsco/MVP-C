@@ -24,6 +24,7 @@ final class TeamFunViewController: UIViewController {
 
         title = "🥳🤪 Team Fun 😎🥳"
         view.backgroundColor = ThemeColors.teamFunBackgroundColor
+        addPlaceHolderLabel()
     }
 
     override func viewDidDisappear(_ animated: Bool) {

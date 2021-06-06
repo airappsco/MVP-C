@@ -9,6 +9,7 @@ import UIKit
 
 enum FontStyle {
     case bold
+    case normal
     case thin
     case italic
 }
@@ -21,6 +22,8 @@ final class StandardUILabel: UILabel {
         switch fontStyle {
         case .bold:
             font = UIFontMetrics(forTextStyle: UIFont.TextStyle.body).scaledFont(for: UIFont(name: "Helvetica-Bold", size: fontSize)!)
+        case .normal:
+            font = UIFontMetrics(forTextStyle: UIFont.TextStyle.body).scaledFont(for: UIFont(name: "Helvetica", size: fontSize)!)
         case .thin:
             font = UIFontMetrics(forTextStyle: UIFont.TextStyle.body).scaledFont(for: UIFont(name: "Helvetica-Light", size: fontSize)!)
         case .italic:

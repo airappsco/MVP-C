@@ -4,9 +4,6 @@
 This is our Air Onboarding project. It's purpose is to help anyone joining the Company to familiarise themselves with the codebase on a smaller scale.
 It shows our code style and the architecture used which is Model View Presenter with Coordinator pattern (MVP-C)
 
-
-
-
 ## Features
 
 - Light/dark mode natively
@@ -14,7 +11,6 @@ It shows our code style and the architecture used which is Model View Presenter 
 - Easy to understand folder structure
 - No external library usage
 
-  
 ## Usage Instructions
 
 To run the project simply clone the repo and run it using
@@ -38,8 +34,15 @@ To run the project simply clone the repo and run it using
   
 ## How to create a new screen
 
-First add a new group for your new screen for example:
-MyNewScreen
+First add a new group for your new screen to ViewControllers for example:
+- ViewControllers
+    - MyNewScreen
+
+Next add three files to your group:
+- MyNewScreen
+    - MyNewScreenViewController.swift
+    - MyNewScreenPresenter.swift
+    - MyNewScreenCoordinator.swift
 
 ## Support
 

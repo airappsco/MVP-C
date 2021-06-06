@@ -18,6 +18,7 @@
 		4F62465F265D910F00E89DF2 /* OurAppsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F62465E265D910F00E89DF2 /* OurAppsCoordinator.swift */; };
 		4FB20A21266D33AC007A6B0B /* DataFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FB20A20266D33AC007A6B0B /* DataFetcher.swift */; };
 		4FB20A26266D50A1007A6B0B /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FB20A25266D50A1007A6B0B /* UIViewControllerExtension.swift */; };
+		4FB20A28266D5FB5007A6B0B /* Synthesizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FB20A27266D5FB5007A6B0B /* Synthesizer.swift */; };
 		4FEABFB7265AB67D009A5D2E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FEABFB6265AB67D009A5D2E /* Constants.swift */; };
 		4FEABFB9265AB6E5009A5D2E /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FEABFB8265AB6E5009A5D2E /* Coordinator.swift */; };
 		4FEABFBC265AB79C009A5D2E /* ThemeColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FEABFBB265AB79C009A5D2E /* ThemeColors.swift */; };
@@ -77,6 +78,7 @@
 		4F62465E265D910F00E89DF2 /* OurAppsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OurAppsCoordinator.swift; sourceTree = "<group>"; };
 		4FB20A20266D33AC007A6B0B /* DataFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataFetcher.swift; sourceTree = "<group>"; };
 		4FB20A25266D50A1007A6B0B /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
+		4FB20A27266D5FB5007A6B0B /* Synthesizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Synthesizer.swift; sourceTree = "<group>"; };
 		4FEABFB6265AB67D009A5D2E /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		4FEABFB8265AB6E5009A5D2E /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		4FEABFBB265AB79C009A5D2E /* ThemeColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeColors.swift; sourceTree = "<group>"; };
@@ -309,6 +311,7 @@
 			isa = PBXGroup;
 			children = (
 				4FF6AAF72663A7AA006DB682 /* ColorSupport.swift */,
+				4FB20A27266D5FB5007A6B0B /* Synthesizer.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -465,6 +468,7 @@
 				4FF8B4A326682D99006CB4BC /* TeamFunCoordinator.swift in Sources */,
 				4FEABFC9265AB992009A5D2E /* HomeViewPresenter.swift in Sources */,
 				4FEABFC5265AB966009A5D2E /* HomeViewController.swift in Sources */,
+				4FB20A28266D5FB5007A6B0B /* Synthesizer.swift in Sources */,
 				4FB20A26266D50A1007A6B0B /* UIViewControllerExtension.swift in Sources */,
 				4FF6AAF82663A7AA006DB682 /* ColorSupport.swift in Sources */,
 				4F55F30426567B4C00BB6314 /* SceneDelegate.swift in Sources */,
